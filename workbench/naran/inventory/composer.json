@@ -1,0 +1,23 @@
+{
+    "name": "naran/inventory",
+    "description": "",
+    "authors": [
+        {
+            "name": "Naran Arethiya",
+            "email": "naranarethiya@gail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Naran\\Inventory\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
