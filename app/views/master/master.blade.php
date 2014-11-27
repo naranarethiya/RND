@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	@include('head.php')
+	@include('master.head')
 </head>
 
 <body class="skin-blue fixed">
-	@include('header.php');
+	@include('master.header')
 	<div class="wrapper row-offcanvas row-offcanvas-left">
-		@include('sidebar.php')
+		@include('master.sidebar')
 		<aside class="right-side">
 			<section class="content-header">
 				<h1>
-					Blank page
-					<small>it all starts here</small>
+					
 				</h1>
 			</section>
 			<section class="content">
-
-
+				 {{$content or ''}}
 			</section>
 		</aside>
 	</div>
@@ -37,5 +35,6 @@
 			@endforeach
 		@endif
 	@endif
+
 </body>
 </html>
