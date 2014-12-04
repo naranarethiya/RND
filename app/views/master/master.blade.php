@@ -11,7 +11,7 @@
 		<aside class="right-side">
 			<section class="content-header">
 				<h1>
-					
+					{{$title}}
 				</h1>
 			</section>
 			<section class="content">
