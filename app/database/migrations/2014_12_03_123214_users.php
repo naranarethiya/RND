@@ -27,6 +27,7 @@ class Users extends Migration {
 
 		Schema::create('login_history',function($table) {
 			$table->integer('uid');
+			$table->string('ip');
 			$table->timestamp('created_at');
 		});
 	}
