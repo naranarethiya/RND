@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'aura',
+			'database'  => 'aura_new',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

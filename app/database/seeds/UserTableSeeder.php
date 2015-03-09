@@ -8,9 +8,10 @@ class UserTableSeeder extends Seeder
 		User::create(array(
 			'name'     => 'Naran Arethiya',
 			'email'    => 'naranarethiya@gmail.com',
-			'password' => Hash::make('abc@123'),
-			'temp' => 'abc@123',
-			'mobile' => '8879331463'
+			'password' => Hash::make('abc123'),
+			'temp_pass' => 'abc123',
+			'mobile' => '8879331463',
+			'created_at'=>date('Y-m-d H:i:s')
 		));
 	}
 }
