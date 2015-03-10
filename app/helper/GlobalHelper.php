@@ -11,13 +11,16 @@ class GlobalHelper {
     public static function setMessage($message, $flag = 'error')
     {
         $tempMessage = '';
-        if (Session::get('error'))
+        if (Session::get('error')) {
             $tempMessage = Session::get('error');
+        }
     
-        if ($tempMessage == "")
-            $tempMessage = $message;
-        else
-            $tempMessage = $tempMessage . '<br />' . $message;
+        if ($tempMessage == "") {
+            $tempMessage = '<li>'.$message.'</li>';
+        }
+        else {
+            $tempMessage = $tempMessage.$message;
+        }
     
         Session::flash($flag, $tempMessage);
     }

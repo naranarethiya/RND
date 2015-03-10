@@ -404,4 +404,64 @@ function convertStringToHTML($string)
         return $string;
     }
 
+
+function parent_child_array($array,$parent_col) {
+  $return = array();
+  foreach($array as $key=>$row) {
+     if (!isset($return[$row[$parent_col]])) {
+        $return[$row[$parent_col]] =$row;
+        $return[$row[$parent_col]]['child'] =array();
+     }
+     else {
+        $return[$row[$parent_col]]['child'][] =$row;
+     }
+  }
+  return $return;
+}
+
+function replaces($string,$array) {
+    foreach($array as $key=>$val) {
+        $string=str_replace('|*'.$key.'*|',$val,$string);
+    }
+    return $string;
+}
+
+/*
+* Create combobox from array
+*/
+function generate_combobox($name,$array,$key,$value,$selected=false,$other=false) {
+  if(empty($array)) {
+    $output = "<select name=\"{$name}\" ".$other.">";
+    $output .= "<option value=\"\">SELECT</option>";    
+    $output .= "</select>";
+  }
+  else{  
+    $output = "<select name=\"{$name}\" ".$other.">";
+    $output .= "<option value=\"\">SELECT</option>";
+    $keys=array_column($array,$key);
+    $vals=array_column($array,$value);
+    $new_array=array_combine($keys,$vals);
+
+    foreach ($new_array as $key => $value) {
+      if(is_array($selected)) {
+        if (in_array($key,$selected)) {
+          $output .= "<option value=\"{$key}\" selected>{$value}</option>";
+        } else {
+            $output .= "<option value=\"{$key}\">{$value}</option>";
+        }
+      }
+      else {
+        if ($selected != false && $selected == $key) {
+          $output .= "<option value=\"{$key}\" selected>{$value}</option>";
+        } else {
+            $output .= "<option value=\"{$key}\">{$value}</option>";
+        }
+      }
+    }
+
+    $output .= "</select>";
+  }
+  return $output;
+}
+
 ?>

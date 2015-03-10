@@ -1,7 +1,7 @@
 @if(Session::has('error'))
 	<div class="alert alert-danger alert-dismissable">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		{{ Session::get('error') }}
+		<ul>{{ Session::get('error') }}</ul>
 	</div>
 @endif
 
@@ -9,7 +9,7 @@
 	<div class="alert alert-success alert-dismissable"> 
 		<i class="fa fa-check"></i>
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		{{ Session::get('success') }}
+		<ul>{{ Session::get('success') }}</ul>
 	</div>
 @endif
 
@@ -21,7 +21,7 @@
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 		<ul>
 			@foreach($errorsAll as $error)
-					<li>{{ $error }}</li>
+				<li>{{ $error }}</li>
 			@endforeach
 		</ul>
 	</div>
